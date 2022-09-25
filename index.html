@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Birthdate</title>
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
+</head>
+<style>
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+body {
+  color: #ffffff;
+  background-color: #202124;
+  font-family: 'Comfortaa';
+}
+
+body {
+    width:70%;
+        margin-left:auto;
+        margin-right:auto;
+}
+h1 {
+    font-size: 33px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    text-align: left; 
+    background-color: #151516;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+li h3 {
+        font-size: 100px;
+        margin: 11px;
+        float: left;
+}  
+input {
+    background-color: #151516;
+    color: #44464e;
+    width: 100%;
+    border-width:0px;
+    border:none;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+input[type=text] {
+    color: #44464e;
+}
+
+</style>
+<body>
+    <div class="title">
+        <h1 >Country B-Days</h1>
+    </div>
+
+    <input type="text" id="search" onkeyup="searchFUNC()" placeholder="Search for a date">
+
+    <ul id="countrieslist">
+        <li><h3 class="fi fi-11"></h3> <h1>Base</h1><p>1/1/1111 | January 1st</p></li> 
+
+
+        <li><h3 class="fi fi-pt"></h3> <h1>Base</h1><p>1/1/1111 | January 1st</p></li> 
+        <li><h3 class="fi fi-pt"></h3> <h1>Base</h1><p>1/1/1111 | January 1st</p></li> 
+        <li><h3 class="fi fi-es"></h3> <h1>Spain</h1><p>1/1/1492 | January 1st</p></li> 
+        <li><h3 class="fi fi-mc"></h3> <h1>Monaco</h1><p>1/1/1419 | January 1st</p></li> 
+        <li><h3 class="fi fi-ch"></h3> <h1>Switzerland</h1><p>1/8/1291 | January 8th</p></li> 
+        <li><h3 class="fi fi-ad"></h3> <h1>Andorra</h1><p>1/1/1278 | January 1st</p></li> 
+        <li><h3 class="fi fi-th"></h3> <h1>Thailand</h1><p>1/1/1238 | January 1st</p></li> 
+        <li><h3 class="fi fi-at"></h3> <h1>Austria</h1><p>1/1/1156 | January 1st</p></li> 
+        <li><h3 class="fi fi-pt"></h3> <h1>Portugal</h1><p>1/1/1143 | January 1st</p></li> 
+        <li><h3 class="fi fi-hu"></h3> <h1>Hungary</h1><p>1/1/1001 | January 1st</p></li>    
+        <li><h3 class="fi fi-fr"></h3> <h1>France</h1><p>1/1/0486 | January 1st</p></li>
+        <li><h3 class="fi fi-sm"></h3> <h1>San Marino</h1><p>3/9/0301 | September 3rd</p> </li>
+      </ul>
+
+</body>
+<script>
+    function searchFUNC() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('search');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("countrieslist");
+      li = ul.getElementsByTagName('li');
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        p = li[i].getElementsByTagName("p")[0];
+        txtValue = p.textContent || p.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+</html>
