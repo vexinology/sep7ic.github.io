@@ -70,6 +70,7 @@ input[type=text] {
 <body>
     <div class="title">
         <h1 >Country B-Days (WIP)</h1>
+        <h2>Find out what country shares the same formation date as your birthday!</h2>
     </div>
 
     <input type="text" id="search" onkeyup="searchFUNC()" placeholder="Search for a date">
@@ -134,14 +135,12 @@ input[type=text] {
 </body>
 <script>
     function searchFUNC() {
-      // Declare variables
-      var input, filter, ul, li, a, i, txtValue;
+      var input, filter, ul, li, p, i, txtValue;
       input = document.getElementById('search');
       filter = input.value.toUpperCase();
       ul = document.getElementById("countrieslist");
       li = ul.getElementsByTagName('li');
     
-      // Loop through all list items, and hide those who don't match the search query
       for (i = 0; i < li.length; i++) {
         p = li[i].getElementsByTagName("p")[0];
         txtValue = p.textContent || p.innerText;
@@ -152,5 +151,7 @@ input[type=text] {
         }
       }
     }
+
     </script>
 </html>
+
