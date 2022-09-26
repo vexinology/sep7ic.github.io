@@ -79,7 +79,11 @@ background-color: #151516;
 padding: 33px;
 text-align: center;
 }
-
+.stickkk {
+  position: fixed;
+  bottom: 0;
+  right: 0; 
+}
 </style>
 <body>
     <div class="header">
@@ -96,9 +100,20 @@ text-align: center;
     <span class="fi fi-gr"></span>
     <p>im working on it</p>
     <a href="CountryBDAY">LI NK OR SOMETHING</a>
+    <p class="stickkk">This Session's elements</p>
+    <img src="hrah" id="randimg" alt="epenis" width="300px" class="stickkk">
   </div>
 </div>
 
 
 </body>
+<script>
+  function getRandomInt(min, max) {
+min = Math.ceil(min);
+max = Math.floor(max);
+return Math.floor(Math.random() * (max - min)) + min; // The maximum is exclusive and the minimum is inclusive
+}
+
+document.getElementById("randimg").src = "elements/" + getRandomInt(1, 20) + '.png'
+</script>
 </html>
